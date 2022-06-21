@@ -1,15 +1,15 @@
 public class Calc {
-    public static String calculate(String wrd, String wrd1, char opr) {
-        int num1 = Integer.parseInt(wrd1);
+    public static String calculate(String wrd, String wrd1, String opr) throws Exception {
+        int num1 = 0;
         String result = new String();
         switch (opr) {
-            case '-':
+            case "-":
                 result = wrd.replace(wrd1, "");
                 break;
-            case '+':
+            case "+":
                 result = wrd + wrd1;
                 break;
-            case '*':
+            case "*":
                 num1 = Integer.parseInt(wrd1);
                 for (int i = 0; i < num1; i++) {
                     result += wrd;
@@ -18,13 +18,13 @@ public class Calc {
                     result = result.substring(0, 39) + "...";
                 }
                 break;
-            case '/':
+            case "/":
                 num1 = Integer.parseInt(wrd1);
                 int stringLength = Math.round(wrd.length() / num1);
                 result = wrd.substring(0, stringLength);
                 break;
             default:
-                System.out.println("Неверная операция");
+                throw new Exception("Неверная операция");
         }
         return result;
     }
