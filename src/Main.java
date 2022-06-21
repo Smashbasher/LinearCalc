@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println("Введите выражение типа: \"а"+"b\", \"a\"-\"b\", \"a\"*x, \"a\"/x");
+        System.out.println("Введите выражение типа: \"а\"+\"b\", \"a\"-\"b\", \"a\"*x, \"a\"/x");
         String[] values = Input.read();
-        //boolean goodValues = IntChecker.check(values);
+        boolean goodValues = IntChecker.check(values);
         String opr = values[1];
         String result = Calc.calculate(values[0], values[2], opr);
         int resultLength = result.length();

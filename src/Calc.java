@@ -1,6 +1,6 @@
 public class Calc {
     public static String calculate(String wrd, String wrd1, String opr) throws Exception {
-        int num1 = 0;
+        int num1;
         String result = new String();
         switch (opr) {
             case "-":
@@ -25,6 +25,9 @@ public class Calc {
                 break;
             default:
                 throw new Exception("Неверная операция");
+        }
+        if (num1 < 1 || num1 >10){
+            throw new Exception("Множители и делитель больше 10 не допускаются");
         }
         return result;
     }
